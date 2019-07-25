@@ -8,5 +8,5 @@ Locations of the 10 players in the court when the shot was taken are the columns
 
 * movement_data_play15.RDS: Player tracking data from event id = 15.  https://youtu.be/jb57MFQLoRo?t=17  
 
+![Alt text](https://github.com/EdgarSantos-Fernandez/id_basketball/blob/master/event15-4.gif?raw=true "Title")
 
-[[https://github.com/EdgarSantos-Fernandez/id_basketball/blob/master/event15-4.gif|alt=octocat]]
