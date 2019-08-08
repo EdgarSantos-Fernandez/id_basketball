@@ -1,6 +1,6 @@
 #---------------------------------------------------------------------
 # Edgar Santos Fernandez
-# 2019-07-24
+# 2019-08-08
 # Description: Takes the game data, computes the ID and plots the clusters 
 #---------------------------------------------------------------------
 
@@ -35,19 +35,27 @@ Rcpp::sourceCpp("posterior_analysis_of_likelihood_and_Nq.cpp")
 #-----------------------------------------------------
 #functions:
 
-subset_data_both <- function(m4 = m4, team = team){ #subset the data
+
+subset_data_both <- function(m4 = m4, team = team, inc.ball = F){ #subset the data
   possession <- ifelse(team == '_h', 'home', 'away')
-  vars <- c(names(m4)[grepl('_h', names(m4))] , names(m4)[grepl('_a', names(m4))] , 'x_loc_mean','z_loc_ball', 'desc', 'event.id' , 'ball_possession')  
+  
+  vars <- c(names(m4)[grepl('_h', names(m4))] , 
+            names(m4)[grepl('_a', names(m4))] , 
+            'x_loc_mean','z_loc_ball', 'desc', 'event.id' , 'ball_possession', 
+            'x_ball', 'y_ball')  
+  
   DATA <- m4[, vars] 
   DATA$repeated <- ifelse(DATA$x_loc_mean - lag(DATA$x_loc_mean) == 0,1,0) #repeated row with different actions
-  DATA <- DATA %>% group_by( x_loc_mean ) %>%  slice(n()) %>% ungroup() %>% arrange(event.id)
+  DATA <- DATA %>% group_by( x_loc_mean ) %>%  
+    slice(n()) %>% ungroup() %>% arrange(event.id)
   DATA <- dplyr::filter(DATA, ball_possession == possession)
   
   ball_possession <- DATA$ball_possession
   categ <- DATA$desc # event_team outcome
   event_id <- DATA$event.id
   
-  ball_names <- c(names(DATA)[grepl('_ball', names(DATA))]) # removing the coordinates of the ball
+  if(inc.ball == F) {ball_names <- as.vector(names(DATA)[grepl('_ball', names(DATA))]) }
+    else  ball_names <- "z_loc_ball" # removing the coordinates of the ball
   home <- DATA %>% dplyr::select(-repeated, -x_loc_mean, -ball_names)
   
   DATA <- DATA %>% dplyr::select(-desc, -repeated, -x_loc_mean, -event.id, -ball_possession, -ball_names)
