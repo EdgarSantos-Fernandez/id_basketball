@@ -20,7 +20,7 @@ Università della Svizzera italiana, USI, Lugano.
 University of Insubria, Italy
 
 
-#Installation:
+# Installation:
 Computations in the article are based on the R package ```Rhidalgo``` which stands for Heterogeneous Intrinsic
 Dimension Algorithm.
 
@@ -33,7 +33,7 @@ install_github("https://github.com/EdgarSantos-Fernandez/id_basketball/Rhidalgo"
 library("Rhidalgo")
 ```
 
-#Analysis of movement data:
+# Analysis of movement data:
 
 ## Data: 
 
