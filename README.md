@@ -25,7 +25,7 @@ Dimension Algorithm.
 
 # Installation:
 
-Please, download the files from the folder Codes and source both files from R:
+Please, download the files from the folder Code and source both files from R:
 
 ```
 source("Helpers_Code.R")
