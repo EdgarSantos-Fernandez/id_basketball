@@ -47,7 +47,10 @@ library("Rhidalgo")
 
 ## Data: 
 
-* file CLEatGSW.RDS contains the player data from the game CLE vs GSW played on 25-12-2015.
+The file CLEatGSW.RDS contains the player data from the game CLE vs GSW played on 25-12-2015.
+
+## Codes:
+Please, see the file ```ID in basketball.Rmd``` for an illustration of the use of HIDALGO. 
 
 ## Results:
 
