@@ -242,7 +242,23 @@ p2 <- ggplot(df15) +
 ```
 
 
-
 ```{r, eval = T}
 grid.arrange(p1, p2, nrow = 2, ncol = 1, heights=c(10,5), widths=c(11))
+```
+
+Heatmap of the posterior similarity matrix of the play:
+
+```{r, eval = T}
+M_away <- mcclust::comp.psm(t(out3R$AC))
+set.seed(2020)
+superheat::superheat(M_away, 
+                            smooth.heat = T,
+                            legend = T,
+                            bottom.label.size = .15,
+                            left.label.size = .15,
+                            bottom.label.text.size = 3,
+                            left.label.text.size = 3,
+                            left.label.text.angle = 0,
+                            bottom.label.text.angle = 90 )
+
 ```
