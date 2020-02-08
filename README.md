@@ -20,27 +20,47 @@ Università della Svizzera italiana, USI, Lugano.
 University of Insubria, Italy
 
 
-# Installation:
-Computations in the article are based on the R package ```Rhidalgo``` which stands for Heterogeneous Intrinsic
+Computations in the article are based on ```Rhidalgo``` which stands for Heterogeneous Intrinsic
 Dimension Algorithm.
 
+# Installation:
+
+Please, download the files from the folder Code and source the files from R:
+
+```
+Rcpp::sourceCpp("Hidalgo_Code.cpp")
+source("Helpers_Code.R")
+source('plot functions.R')
+```
+<!--
 ```
 library(devtools)
 install_github("https://github.com/EdgarSantos-Fernandez/id_basketball/Rhidalgo")
 ```
-
 ```
 library("Rhidalgo")
 ```
+-->
+
 
 # Analysis of movement data:
 
 ## Data: 
 
-* game.12.25.2015.CLE.at.GSW.RDS: Shot chart variables from the game GSW vs CLE played on 25-12-2015.
-Locations of the 10 players in the court when the shot was taken are the columns x_ti and y_ti. Where x and y are the locations in the horizontal and the vertical axis respectively. t is the team (a = away) a (h = home). i is the player number (1-5).
+The file CLEatGSW.RDS contains the player data from the game CLE vs GSW played on 25-12-2015.
 
-* movement_data_play15.RDS: Player tracking data from event id = 15.  https://youtu.be/jb57MFQLoRo?t=17  
+## Codes:
+Please, see the file ```ID in basketball.Rmd``` for an illustration of the use of HIDALGO. 
 
-![Alt text](https://github.com/EdgarSantos-Fernandez/id_basketball/blob/master/event15-4.gif?raw=true "Title")
+## Results:
+
+Fig: (a) Players and ball movement during the first scored three-point field goal of the
+game Cleveland Cavaliers (CLE) and the Golden State Warriors (GSW) on the 25 th of De-
+cember, 2015. This play can be watched at https://youtu.be/jb57MFQLoRo?t=17.
+(b) Evolution of the posterior intrinsic dimension of the player's movements in the x and y coordinates which captures changes in movement dynamics and complexities. 
+
+![Alt text](https://github.com/EdgarSantos-Fernandez/id_basketball/blob/master/p15a.gif?raw=true "Title")
+![Alt text](https://github.com/EdgarSantos-Fernandez/id_basketball/blob/master/p15b.gif?raw=true "Title")
+Fig: Heatmap of the posterior similarity matrix obtained from the Bayesian ID estimation.
+![Alt text](https://github.com/EdgarSantos-Fernandez/id_basketball/blob/master/post_matrix.jpg?raw=true "Title")
 
