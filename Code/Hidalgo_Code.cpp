@@ -494,7 +494,7 @@ arma::colvec efficient_nin_maker(arma::umat index_row, arma::colvec z, int N, in
   nin.fill(0);
   for(int i=0; i<N; i++){
     for(int j=0; j<q; j++){
-      nin[i] = nin[i]+(z[index_row[j,i]] == z[i]);
+      nin[i] = nin[i]+(z[index_row(j,i)] == z[i]);
     }
   }
   return nin;
@@ -537,11 +537,10 @@ List HIDALGO(arma::colvec mu_obser,
   arma::mat  ALL_D(L,NSIM), ALL_Pi(L,NSIM), ALL_Ci(N,NSIM);
   ////////////////////////////////////////////////////////////////////////////////////////////
   arma::colvec  ALL_U(NSIM);
-  arma::colvec  ALL_logPost(NSIM),
-  ALL_loglik(NSIM);
-  arma::colvec BIC(NSIM);
-  arma::colvec TAB(L);
-  arma::colvec lev  = arma::linspace<arma::vec>(1, L, L);
+  arma::colvec  ALL_logPost(NSIM),   ALL_loglik(NSIM);
+  arma::colvec  BIC(NSIM);
+  arma::colvec  TAB(L);
+  arma::colvec  lev  = arma::linspace<arma::vec>(1, L, L);
   ////////////////////////////////////////////////////////////////////////////////////////////
   List ICR = index_row_col(Nq,q,N);
   
