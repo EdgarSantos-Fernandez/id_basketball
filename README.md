@@ -59,8 +59,7 @@ game Cleveland Cavaliers (CLE) and the Golden State Warriors (GSW) on the 25 th 
 cember, 2015. This play can be watched at https://youtu.be/jb57MFQLoRo?t=17.
 (b) Evolution of the posterior intrinsic dimension of the player's movements in the x and y coordinates which captures changes in movement dynamics and complexities. 
 
-![Alt text](https://github.com/EdgarSantos-Fernandez/id_basketball/blob/master/p15a.gif?raw=true "Title")
-![Alt text](https://github.com/EdgarSantos-Fernandez/id_basketball/blob/master/p15b.gif?raw=true "Title")
+![Alt text](https://github.com/EdgarSantos-Fernandez/id_basketball/blob/master/p15_move_ID.gif?raw=true "Title")
 Fig: Heatmap of the posterior similarity matrix obtained from the Bayesian ID estimation.
 ![Alt text](https://github.com/EdgarSantos-Fernandez/id_basketball/blob/master/post_matrix.jpg?raw=true "Title")
 
